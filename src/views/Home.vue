@@ -4,7 +4,8 @@
 </script>
 
 <template>
-  HOME
+  HOME<br/>
+  <button @click="this.$store.commit('increment')" v-text="`VUEX-Store: ${this.$store.state.count}`"></button>
 </template>
 
 <style>

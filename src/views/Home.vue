@@ -1,12 +1,30 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-</script>
 
 <template>
-  HOME<br/>
+  {{book.title}}<br/>
   <button @click="this.$store.commit('increment')" v-text="`VUEX-Store: ${this.$store.state.count}`"></button>
 </template>
+
+<script>
+import { ref, reactive } from 'vue' // reactive 'feature'
+
+export default {
+  
+  setup() {
+
+    const readersNumber = ref(0)
+    const book = reactive({ title: 'Vue 3 Guide' })
+
+    return {
+      readersNumber,
+      book
+    }
+  
+  }
+
+}
+
+</script>
+
 
 <style>
 #app {
